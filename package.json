@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build:dev:client": "npm run clean && webpack",
-    "build:production:client": "SET NODE_ENV=production npm run clean && webpack -p",
+    "build:production:client": "SET NODE_ENV=production npm run clean && node ./node_modules/webpack/bin/webpack.js -p",
     "build:production:server": "SET  NODE_ENV=production babel src/server -d dist",
     "build:production": "npm run build:production:client && npm run build:production:server",
     "test": "echo \"Error: no test specified\" && exit 1",
