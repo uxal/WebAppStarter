@@ -57,5 +57,5 @@
     "redux": "^3.7.1",
     "redux-thunk": "^2.2.0"
   },
-  "engines":{"node":"8.1.2"}
+  "engines":{"node":">=8.0.0"}
 }
