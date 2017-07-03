@@ -35,9 +35,11 @@ if (isInProduction) {
 }
 
 //include server routes as middleware
-app.use(mount('/api/' + config.apiVersion, function (ctx) {
-    require('./routes').routes()(ctx);
+/*
+app.use(mount(`/api/${config.apiVersion}`, (ctx) => {
+    require('./routes').routes()(ctx)
 }));
+*/
 
 //anything else is returning the index file
 

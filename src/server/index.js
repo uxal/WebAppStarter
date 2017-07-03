@@ -14,7 +14,6 @@ require("babel-polyfill");
 const Koa = require('koa');
 const logger = require('koa-logger');
 const serve = require('koa-static');
-const mount = require('koa-mount');
 const bodyParser = require('koa-bodyparser');
 const config = require('./config/default');
 const mongoose = require('mongoose');
@@ -32,16 +31,7 @@ const app = new Koa();
 
 if (isInProduction) {
     app.use(serve('/'));
-
 }
-
-//include server routes as middleware
-app.use(mount(`/api/${config.apiVersion}`, (ctx) => {
-    require('./routes').routes()(ctx)
-}));
-
-//anything else is returning the index file
-
 
 //logger
 app.use(logger());
